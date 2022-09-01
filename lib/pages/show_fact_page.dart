@@ -34,7 +34,11 @@ class ShowFactPage extends StatelessWidget {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(state.fact),
+                  ConstrainedBox(
+                    constraints:
+                        const BoxConstraints(maxWidth: 240, maxHeight: 320),
+                    child: Text(state.fact),
+                  ),
                   Text(state.localizedDate),
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxHeight: 320),
